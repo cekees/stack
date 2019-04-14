@@ -23,7 +23,7 @@ build_stages:
     cd _build
 
 - name: configure
-  debug: true
+  debug: False#true
   extra: [
   '-DBUILD_SHARED_LIBS:BOOL=ON',
   '-DBUILD_EXES:BOOL=OFF',
