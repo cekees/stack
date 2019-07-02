@@ -51,7 +51,7 @@ packages:
   petsc4py:
     version: 3.10.0
     with_conf: true
-  pytables:
+  # pytables:
   tetgen:
   triangle:
   memory_profiler:
@@ -63,7 +63,6 @@ packages:
   pytest-xdist:
   pytest-cov:
   pybind11:
-  gmsh: #used for mesh generation
+  #gmsh: #used for mesh generation
   zoltan:
   scorec:
-
