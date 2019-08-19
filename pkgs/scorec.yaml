@@ -6,13 +6,13 @@ dependencies:
 #sources:
 #  - url: https://github.com/scorec/core.git
 #    key: git:fc94c3d4b013d7535e43549577b2c5f619d43d4b
-
 sources:
-- key: zip:f2lso4iu2raobfwovh43h6z556b6vcni
-  url: https://github.com/SCOREC/core/archive/dfe08cd01552acf4b758bf942dade27e4ea46f22.zip
-
-#- key: zip:ttofytsvsn7wiy5mw3utbdbmobbw7zr7
-#  url: https://github.com/SCOREC/core/archive/fc94c3d4b013d7535e43549577b2c5f619d43d4b.zip
+#- key: zip:f2lso4iu2raobfwovh43h6z556b6vcni
+#  url: https://github.com/SCOREC/core/archive/dfe08cd01552acf4b758bf942dade27e4ea46f22.zip
+#- key: zip:tr27vv5oqjy2wlgeezfpkanq3mteo5fj
+#  url: https://github.com/zhang-alvin/core/archive/8ec2b8255a4639c33d1c34fea8983f1ec58228c4.zip
+- key: zip:hwqx4sn6ej5574z2n5on6p34vrdg7q6g
+  url: https://github.com/zhang-alvin/core/archive/856f8e0d5ed3c9e944d5311d7df6e41429fd6b18.zip
 
 defaults:
   relocatable: true
@@ -30,7 +30,7 @@ build_stages:
   debug: true
   extra: [
   '-DBUILD_SHARED_LIBS:BOOL=OFF',
-  '-DBUILD_EXES:BOOL=OFF',
+  '-DBUILD_EXES:BOOL=ON',
   '-DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON',
   '-DCMAKE_C_COMPILER:STRING=${MPICC}',
   '-DCMAKE_CXX_COMPILER:STRING=${MPICXX}',
