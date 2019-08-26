@@ -14,6 +14,9 @@ extends:
 # profile.
 
 parameters:
+  pyver: '3.7'
+  python_site_packages_rel: 'lib/python3.7/site-packages'
+  python_host_packages: '/p/app/unsupported/COST/python3/3.5.1/gnu/lib/python3.5/site-packages/'
   machine: CrayXC40
   HOST_MPICC: cc
   HOST_MPICXX: CC
@@ -30,49 +33,43 @@ parameters:
 packages:
   future:
   recordtype:
+  pip:
   pkg-config:
     use: host-pkg-config
   launcher:
   cmake:
-  openjpeg:
-    version: '2.1'
   openssl:
-    use: host-openssl
   python:
     host: false
     link: shared
     build_with: |
-      bzip2, sqlite, openssl
+      bzip2, sqlite, openssl, libffi
   blas:
-    use: host-libsci-blas
+    use: openblas
   lapack:
-    use: host-libsci-lapack
+    use: openblas-lapack
   daetk:
   mpi:
     use: host-mpi
   mpi4py:
   nose:
-  coverage:
   hdf5:
-  pygments:
   parmetis:
     without_check: true
   petsc:
-    version: 3.7.6
+    version: 3.11.3
+    openblas: true
     build_with: |
       parmetis, cmake, blas
     download: |
-      blacs, scalapack, mumps, ptscotch, zoltan
-    use_downloaded: |
-      superlu
+      superlu, superlu_dist, blacs, scalapack, mumps
     coptflags: -O2
     link: shared
     debug: false
   petsc4py:
-    version: 3.7.0
+    version: 3.11.0
     with_conf: true
   pytables:
-  sympy:
   tetgen:
   triangle:
   memory_profiler:
@@ -83,14 +80,12 @@ packages:
       python
   #cgal:
   h5py:
-  pip:
   zoltan:
-    use: petsc-zoltan
-#  zoltan:
-#    build_with: |
-#      parmetis
+    build_with: |
+      parmetis
   chrono:
   pytest:
   pytest-xdist:
-#  gmsh:
+  gmsh:
   scorec:
+  scipy:
